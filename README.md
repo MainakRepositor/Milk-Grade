@@ -9,6 +9,7 @@ Milk quality detection and grade analysis through machine learning has revolutio
 ### Layout
 
 ```
+
 ├───images
 ├───Tabs
 │   └───__pycache__
@@ -20,6 +21,7 @@ Milk quality detection and grade analysis through machine learning has revolutio
 └─── main.py
 └─── web_functions.py
 └─── requirements.txt
+
 ```
 
 
