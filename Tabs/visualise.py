@@ -32,14 +32,20 @@ def app(df, X, y):
         ax.set_ylim(bottom + 0.5, top - 0.5)                    # Increasing the bottom and decreasing the top margins respectively.
         st.pyplot(fig)
 
-    
-    if st.checkbox("Plot Decision Tree"):
-        model, score = train_model(X, y)
-        # Export decision tree in dot format and store in 'dot_data' variable.
-        dot_data = tree.export_graphviz(
-            decision_tree=model, max_depth=3, out_file=None, filled=True, rounded=True,
-            feature_names=X.columns, class_names=['0', '1']
-        )
-        # Plot the decision tree using the 'graphviz_chart' function of the 'streamlit' module.
-        st.graphviz_chart(dot_data)
+    if st.checkbox("Size_of_ROIs vs Gradient_Mean_value"):
+        sns.color_palette("rocket", as_cmap=True)
+        ax=sns.scatterplot(x="Size_of_ROIs",y="Gradient_Mean_value",data=df)
+        st.pyplot()
 
+    if st.checkbox("Homogenity vs Entropy"):
+        sns.color_palette("rocket", as_cmap=True)
+        ax=sns.scatterplot(x="Homogenity",y="Entropy",data=df)
+        st.pyplot()
+
+    if st.checkbox("Skewness vs Yearly_Production"):
+        sns.color_palette("rocket", as_cmap=True)
+        ax=sns.scatterplot(x="Skewness",y="Yearly_Production",data=df)
+        st.pyplot()
+
+    
+  
