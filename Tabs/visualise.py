@@ -32,19 +32,19 @@ def app(df, X, y):
         ax.set_ylim(bottom + 0.5, top - 0.5)                    # Increasing the bottom and decreasing the top margins respectively.
         st.pyplot(fig)
 
-    if st.checkbox("Size_of_ROIs vs Gradient_Mean_value"):
+    if st.checkbox("Temperature vs Grade"):
         sns.color_palette("rocket", as_cmap=True)
-        ax=sns.scatterplot(x="Size_of_ROIs",y="Gradient_Mean_value",data=df)
+        ax=sns.scatterplot(x="Temperature",y="Grade",data=df)
         st.pyplot()
 
-    if st.checkbox("Homogenity vs Entropy"):
+    if st.checkbox("Turbidity vs Grade"):
         sns.color_palette("rocket", as_cmap=True)
-        ax=sns.scatterplot(x="Homogenity",y="Entropy",data=df)
+        ax=sns.scatterplot(x="Turbidity",y="Grade",data=df)
         st.pyplot()
 
-    if st.checkbox("Skewness vs Yearly_Production"):
+    if st.checkbox("pH vs Grade"):
         sns.color_palette("rocket", as_cmap=True)
-        ax=sns.scatterplot(x="Skewness",y="Yearly_Production",data=df)
+        ax=sns.lineplot(x="pH",y="Grade",data=df)
         st.pyplot()
 
     
