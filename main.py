@@ -9,6 +9,8 @@ from web_functions import load_data
 # Import pages
 from Tabs import home, data, predict, visualise
 
+
+
 # Configure the app
 st.set_page_config(
     page_title = 'Milk Grade Classfication',
@@ -16,6 +18,14 @@ st.set_page_config(
     layout = 'wide',
     initial_sidebar_state = 'auto'
 )
+
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 # Dictionary for pages
 Tabs = {
